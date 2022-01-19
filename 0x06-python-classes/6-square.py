@@ -50,7 +50,9 @@ class Square:
         value : Tuple of 2 positive integers
             Position
         """
-        if not (value[0] >= 0 and value[1] >= 0):
+        if ((not isinstance(value, tuple)) or (len(value) != 2) or
+                not all(isinstance(elem, int) for elem in value) or
+                not all(elem >= 0 for elem in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -62,7 +64,6 @@ class Square:
         """Prints in stdout the square with the # character"""
         if self.__size == 0:
             print("")
-            return
         for i in range(self.__size):
             print("{}".format(' ' * self.__position[0]), end="")
             print("{}".format('#' * self.__size))
