@@ -19,7 +19,7 @@ class Square:
     @property
     def size(self):
         """Get the value of the attribute size"""
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -39,7 +39,7 @@ class Square:
     @property
     def position(self):
         """Get the value of the attribute position"""
-        return self.__position
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -58,11 +58,11 @@ class Square:
 
     def area(self):
         """Returns the area square"""
-        return self.__size * self.__size
+        return (self.__size * self.__size)
 
     def my_print(self):
         """Prints in stdout the square with the # character"""
-        if self.__size == 0:
+        if (self.__size == 0):
             print("")
             return
         for i in range(0, self.__size):
