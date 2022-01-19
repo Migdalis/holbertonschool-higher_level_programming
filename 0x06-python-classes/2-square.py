@@ -13,11 +13,9 @@ class Square:
             Size of the square
         """
 
-        try:
-            isinstance(size, int)
-            if size < 0:
-                raise ValueError("size must be >= 0")
-        except TypeError:
+        if not isinstance(size, int):
             raise TypeError("size must be an integer")
-
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        
         self.__size = size
