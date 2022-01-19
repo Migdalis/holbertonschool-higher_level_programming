@@ -14,7 +14,7 @@ class Square:
         """
 
         try:
-            size += 0
+            isinstance(size, int)
             if size < 0:
                 raise ValueError("size must be >= 0")
         except TypeError:
