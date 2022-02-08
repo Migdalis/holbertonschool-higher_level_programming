@@ -22,11 +22,11 @@ class Rectangle(Base):
         id : int
             Identifier of the Rectangle
         """
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        super().__init__(id)
 
     @property
     def width(self):
@@ -96,4 +96,4 @@ class Rectangle(Base):
         """
         Calculate and return the area value of the rectangle
         """
-        return self.__x * self.__y
+        return self.width * self.height
