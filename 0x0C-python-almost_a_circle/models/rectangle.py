@@ -81,7 +81,7 @@ class Rectangle(Base):
         """Get the value of the attribute y"""
         return (self.__y)
 
-    @x.setter
+    @y.setter
     def y(self, value):
         """
         Set or change the value of y and chek if a value is valid
