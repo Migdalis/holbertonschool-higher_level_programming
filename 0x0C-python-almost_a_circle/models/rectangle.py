@@ -103,8 +103,10 @@ class Rectangle(Base):
         Method that prints in stdout the Rectangle
         instance with the character #
         """
+        for y in range(self.y):
+            print("")
         for i in range(self.height):
-            print("{}".format('#' * self.width))
+            print("{}{}".format(" " * self.x, '#' * self.width))
 
     def __str__(self):
         """
