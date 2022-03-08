@@ -75,9 +75,9 @@ class Rectangle:
         rep = []
         for i in range(self.height):
             if i == self.height - 1:
-                rep.append("{}".format(self.print_symbol * self.width))
+                rep.append("{}".format(str(self.print_symbol) * self.width))
                 break
-            rep.append("{}\n".format(self.print_symbol * self.width))
+            rep.append("{}\n".format(str(self.print_symbol) * self.width))
         return ("".join(rep))
 
     def __repr__(self):
