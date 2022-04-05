@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
-let biggest = 0, i = 0;
+let biggest = 0;
+let i = 0;
 process.argv.forEach((value, index) => {
   if (parseInt(value) > biggest) {
     biggest = parseInt(value);
