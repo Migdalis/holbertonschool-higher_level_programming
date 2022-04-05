@@ -1,15 +1,15 @@
 #!/usr/bin/node
 
 let biggest = 0;
-let i = 0;
+let second = 0;
 process.argv.forEach((value, index) => {
-  if (parseInt(value) > biggest) {
-    biggest = parseInt(value);
+  const num = Number(value);
+  if (num > biggest) {
+    second = biggest;
+    biggest = num;
+  } else if (num < biggest && num > second) {
+    second = num;
   }
-  i++;
 });
-if (i === 3) {
-  console.log(0);
-} else {
-  console.log(biggest);
-}
+
+console.log(second);
