@@ -9,11 +9,12 @@ request(url, (error, response, body) => {
     console.log(error);
   } else {
     const listFilms = JSON.parse(body).results;
-    const character = 'https://swapi-api.hbtn.io/api/people/' + id + '/';
     let count = 0;
-    for (const element of listFilms) {
-      if (element.characters.includes(character)) {
-        count++;
+    for (const film of listFilms) {
+      for (const char of film.characters) {
+        if (char.includes(id)) {
+          count++;
+        }
       }
     }
     console.log(count);
