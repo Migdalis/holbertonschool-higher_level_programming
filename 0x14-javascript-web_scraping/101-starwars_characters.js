@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 const request = require('request');
-const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2] + '/';
 
 request('https://swapi-api.hbtn.io/api/films/', (error, response, body) => {
   if (error) {
@@ -9,7 +8,8 @@ request('https://swapi-api.hbtn.io/api/films/', (error, response, body) => {
   } else {
     const listFilms = JSON.parse(body).results;
     for (const film of listFilms) {
-      if (film.url.includes(url)) {
+      if (film.url.includes(process.argv[2])) {
+        console.log(film.url);
         const listPeople = film.characters;
         for (const people of listPeople) {
           request(people, (error, response, body) => {
